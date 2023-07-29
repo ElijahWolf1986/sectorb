@@ -3,19 +3,12 @@ import styles from './App.module.css';
 import List from './list/List';
 import Search from './search/Search';
 import apiData from '../utils/data.json';
-import {
-  Router,
-  Route,
-  Switch,
-  useHistory,
-  useLocation,
-} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function App() {
-  //Стейт для хранения данных таблицы
   const [tableData, setTableData] = React.useState([]);
   let location = useLocation();
-  // const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSearch = (keyword) => {
     const searchData = tableData.filter(
@@ -26,6 +19,10 @@ function App() {
 
   const handleEmptySearch = () => {
     setTableData(apiData);
+  };
+
+  const handleChangeUrl = (url) => {
+    navigate(url);
   };
 
   const handleSortColumn = (type) => {
@@ -47,16 +44,18 @@ function App() {
 
   React.useEffect(() => {
     setTableData(apiData);
-    // history.push('/');
-    console.log(location);
+    handleChangeUrl('1');
   }, []);
   return (
-    <Router history={history}>
-      <div className={styles.App}>
-        <Search onSearch={handleSearch} onEmptySearch={handleEmptySearch} />
-        <List tableData={tableData} onSortColumn={handleSortColumn} />
-      </div>
-    </Router>
+    <div className={styles.App}>
+      <Search onSearch={handleSearch} onEmptySearch={handleEmptySearch} />
+      <List
+        tableData={tableData}
+        onSortColumn={handleSortColumn}
+        location={location}
+        onChangeURL={handleChangeUrl}
+      />
+    </div>
   );
 }
 

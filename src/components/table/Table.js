@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Table.module.css';
+import { clearUrlPath } from '../../utils/Fuctions';
 
 const Table = (data) => {
   const tableData = data.props;
@@ -62,7 +63,10 @@ const Table = (data) => {
             .map((item, id) => {
               return handleTableRow(item);
             })
-            .slice(0, 10)
+            .slice(
+              clearUrlPath(data.location) * 10 - 10,
+              clearUrlPath(data.location) * 10
+            )
         )}
       </table>
     </section>

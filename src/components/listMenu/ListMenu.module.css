@@ -21,10 +21,6 @@
     opacity: 0.6;
 }
 
-.list_menu_nav {
-
-}
-
 .list_menu_ul {
     display: flex;
     font-size: 18px;
@@ -40,10 +36,7 @@
 
 .list_menu_li:hover {
     cursor: pointer;
+    color: #7EBC3C;
     opacity: 0.6;
 }
 
-.list_menu_li_active {
-    color: #7EBC3C;
-
-}
