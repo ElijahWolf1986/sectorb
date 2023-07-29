@@ -21,7 +21,10 @@ const Table = (data) => {
           <td className={styles.table_header_cell}>
             <div className={styles.table_header_container}>
               <p>ID</p>
-              <button className={styles.table_header_sortbutton} />
+              <button
+                className={styles.table_header_sortbutton}
+                onClick={data.onSortColumn}
+              />
             </div>
           </td>
           <td className={styles.table_header_cell}>
@@ -38,7 +41,7 @@ const Table = (data) => {
           </td>
         </tr>
         {tableData.length === 0 ? (
-          <p>data error</p>
+          <p>ничего не найдено...</p>
         ) : (
           tableData
             .map((item, id) => {

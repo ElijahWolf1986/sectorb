@@ -14,13 +14,13 @@ const Search = (props) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (!keyword) {
-      return setPlaceholder('Невозможно найти пустоту');
+      return props.onEmptySearch();
     }
     if (!handleValidationTextInputRequired(keyword)) {
       setKeyword('');
       return setPlaceholder('Слишком длинный запрос');
     }
-    setPlaceholder('поиск нажали');
+    props.onSearch(keyword);
     setKeyword('');
   };
 
