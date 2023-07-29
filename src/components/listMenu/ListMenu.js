@@ -28,6 +28,7 @@ const ListMenu = (data) => {
     if (count % 10 === 0)
       return (
         <li
+          key={count}
           onClick={handlePushNav}
           id={count / 10 + 1}
           className={styles.list_menu_li}

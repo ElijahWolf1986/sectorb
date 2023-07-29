@@ -13,7 +13,7 @@ const Table = (data) => {
 
   const handleTableRow = (item) => {
     return (
-      <tr>
+      <tr key={item.id}>
         <td className={styles.table_cell}>{item.id}</td>
         <td className={styles.table_cell}>{item.title}</td>
         <td className={styles.table_cell}>{item.body}</td>
@@ -24,50 +24,54 @@ const Table = (data) => {
   return (
     <section className={styles.table_container}>
       <table className={styles.table}>
-        <tr className={styles.table_header}>
-          <td className={styles.table_header_cell}>
-            <div className={styles.table_header_container}>
-              <p>ID</p>
-              <button
-                id='id'
-                className={styles.table_header_sortbutton}
-                onClick={handleSortButton}
-              />
-            </div>
-          </td>
-          <td className={styles.table_header_cell}>
-            <div className={styles.table_header_container}>
-              <p>Заголовок</p>
-              <button
-                id='title'
-                className={styles.table_header_sortbutton}
-                onClick={handleSortButton}
-              />
-            </div>
-          </td>
-          <td className={styles.table_header_cell}>
-            <div className={styles.table_header_container}>
-              <p>Описание</p>
-              <button
-                id='body'
-                className={styles.table_header_sortbutton}
-                onClick={handleSortButton}
-              />
-            </div>
-          </td>
-        </tr>
-        {tableData.length === 0 ? (
-          <p>ничего не найдено...</p>
-        ) : (
-          tableData
-            .map((item, id) => {
-              return handleTableRow(item);
-            })
-            .slice(
-              clearUrlPath(data.location) * 10 - 10,
-              clearUrlPath(data.location) * 10
-            )
-        )}
+        <tbody>
+          <tr className={styles.table_header}>
+            <td className={styles.table_header_cell}>
+              <div className={styles.table_header_container}>
+                <p>ID</p>
+                <button
+                  id='id'
+                  className={styles.table_header_sortbutton}
+                  onClick={handleSortButton}
+                />
+              </div>
+            </td>
+            <td className={styles.table_header_cell}>
+              <div className={styles.table_header_container}>
+                <p>Заголовок</p>
+                <button
+                  id='title'
+                  className={styles.table_header_sortbutton}
+                  onClick={handleSortButton}
+                />
+              </div>
+            </td>
+            <td className={styles.table_header_cell}>
+              <div className={styles.table_header_container}>
+                <p>Описание</p>
+                <button
+                  id='body'
+                  className={styles.table_header_sortbutton}
+                  onClick={handleSortButton}
+                />
+              </div>
+            </td>
+          </tr>
+          {tableData.length === 0 ? (
+            <tr>
+              <td>ничего не найдено...</td>
+            </tr>
+          ) : (
+            tableData
+              .map((item, id) => {
+                return handleTableRow(item);
+              })
+              .slice(
+                clearUrlPath(data.location) * 10 - 10,
+                clearUrlPath(data.location) * 10
+              )
+          )}
+        </tbody>
       </table>
     </section>
   );
