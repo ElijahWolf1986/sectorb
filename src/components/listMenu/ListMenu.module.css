@@ -1,0 +1,50 @@
+.list_menu {
+    max-width: 1077px;
+    margin: 16px 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.list_menu_button {
+    background: transparent;
+    border: none;
+    margin: 0 16px;
+    color: #474955;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.list_menu_button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.list_menu_nav {
+/* display: flex; */
+
+}
+
+.list_menu_ul {
+    display: flex;
+    font-size: 18px;
+    line-height: 24px;
+    font-style: italic;
+    color: #474955;
+    list-style: none;
+}
+.list_menu_li {
+    margin: 0 0 0 16px
+
+}
+
+.list_menu_li:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.list_menu_li_active {
+    color: #7EBC3C;
+
+}
