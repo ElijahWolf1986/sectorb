@@ -40,3 +40,20 @@
     opacity: 0.6;
 }
 
+@media screen and (min-width: 460px) and (max-width: 800px) {
+    .list_menu_button {
+      font-size: 16px;
+    }
+    .list_menu_ul {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 459px) {
+    .list_menu_button {
+        font-size: 10px;
+      }
+      .list_menu_ul {
+          font-size: 8px;
+      }
+}
