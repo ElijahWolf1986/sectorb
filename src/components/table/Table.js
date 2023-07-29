@@ -1,7 +1,19 @@
 import React from 'react';
 import styles from './Table.module.css';
 
-const Table = (props) => {
+const Table = (data) => {
+  const tableData = data.props;
+
+  const handleTableRow = (item) => {
+    return (
+      <tr>
+        <td className={styles.table_cell}>{item.id}</td>
+        <td className={styles.table_cell}>{item.title}</td>
+        <td className={styles.table_cell}>{item.body}</td>
+      </tr>
+    );
+  };
+
   return (
     <section className={styles.table_container}>
       <table className={styles.table}>
@@ -25,16 +37,15 @@ const Table = (props) => {
             </div>
           </td>
         </tr>
-        <tr>
-          <td className={styles.table_cell}>hvduhjvdu</td>
-          <td className={styles.table_cell}>hvduhjvdu</td>
-          <td className={styles.table_cell}>hvduhjvdu</td>
-        </tr>
-        <tr>
-          <td className={styles.table_cell}>hvduhjvdu</td>
-          <td className={styles.table_cell}>hvduhjvdu</td>
-          <td className={styles.table_cell}>hvduhjvdu</td>
-        </tr>
+        {tableData.length === 0 ? (
+          <p>data error</p>
+        ) : (
+          tableData
+            .map((item, id) => {
+              return handleTableRow(item);
+            })
+            .slice(0, 10)
+        )}
       </table>
     </section>
   );

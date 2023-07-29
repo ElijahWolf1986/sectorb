@@ -3,7 +3,6 @@
 }
 
 .table {
-    /* border: 1px solid red; */
     width: 100%;
     border-spacing: 0;
     font-family: Roboto;
@@ -23,12 +22,9 @@
 }
 .table_header_container {
     border: none;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
-    
-
 }
 
 .table_header_cell {
@@ -39,7 +35,6 @@
 
 .table_header_cell:first-child {
     width: 10%;
-
 }
 
 .table_header_sortbutton {
@@ -57,5 +52,10 @@
 
 .table_cell {
     border: 1px solid #E3E6EC;
-    padding: 15px 0;
+    padding: 15px 10px;
+    text-align: left;
+}
+
+.table_cell:first-child {
+    text-align: center;
 }
