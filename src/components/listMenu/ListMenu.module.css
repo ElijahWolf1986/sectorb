@@ -43,17 +43,21 @@
 @media screen and (min-width: 460px) and (max-width: 800px) {
     .list_menu_button {
       font-size: 16px;
+      margin: 0 
     }
     .list_menu_ul {
         font-size: 12px;
+        padding: 0;
     }
 }
 
 @media screen and (max-width: 459px) {
     .list_menu_button {
         font-size: 10px;
+        margin: 0 
       }
       .list_menu_ul {
           font-size: 8px;
+          padding: 0;
       }
 }
