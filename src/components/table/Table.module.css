@@ -25,6 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* padding: 0 12px; */
 }
 
 .table_header_cell {
@@ -39,10 +40,18 @@
 
 .table_header_sortbutton {
     margin: 0 0 0 25px;
+    padding: 0;
     width: 11.657px;
     height: 5.827px;
     border: none;
+    /* border: 1px solid red; */
     background: url('../../images/sort_ico.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -o-background-repeat: no-repeat;
 }
 
 .table_header_sortbutton:hover {
@@ -58,4 +67,13 @@
 
 .table_cell:first-child {
     text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .table_header_container {
+    justify-content: space-between;
+    padding: 0 12px;
+
+}
+
 }

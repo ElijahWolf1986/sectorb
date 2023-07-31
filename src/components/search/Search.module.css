@@ -45,11 +45,19 @@
 
 .search_button {
     width: 21px;
-    height: 21px;
+    min-height: 21px;
     color: #fff;
     border: none;
+    background: none;
     background: url('../../images/search_ico.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -o-background-repeat: no-repeat;
     margin: 0 16px 0 0;
+    padding: 0;
   }
 
   .search_button:hover {
